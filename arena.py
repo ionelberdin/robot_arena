@@ -5,7 +5,7 @@ class Arena(object):
     colors = {'#': (255, 255, 255),
               'x': (0, 0, 0)}
 
-    def __init__(self, squares, square_size=50):
+    def __init__(self, squares, square_size=40):
         self.squares = squares
         self.square_size = square_size
 
