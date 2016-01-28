@@ -7,7 +7,7 @@ It must be written as a function:
     * that accepts a single input
     * in a python file with arbitrary name
     eg: some_python_file.py
-        >>> def the_best_strategy_ever(state):
+        >>> def best_strategy_ever(state):
         >>>     ...  # here it comes your logic
         >>>     return (some_x, some_y)  # where you want your robot to go to
 
@@ -81,7 +81,7 @@ def human_choice(game_state):
     the position of the mouse when realising a button.
 
     game_state is not required, but it is included
-    as input anyway for compatibility reasons
+    as input anyway for compatibility reasons.
     """
 
     while True:
