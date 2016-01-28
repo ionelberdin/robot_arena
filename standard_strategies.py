@@ -88,3 +88,10 @@ def human_choice(game_state):
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONUP:
                 return pygame.mouse.get_pos()
+
+
+def step_by_step(game_state):
+    """
+    To Be Written
+    """
+    pass
