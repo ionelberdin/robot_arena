@@ -4,8 +4,16 @@ import pygame
 To play in the Robot Arena Challenge every
 player can write their own decision strategy.
 
-It must be written as a function that accepts a
-single input that in the example is called 'game_state'.
+It must be written as a function:
+    * with arbitrary name
+    * that accepts a single input
+
+This file contains two function examples:
+    * human_choice
+    * step_by_step
+
+Input is called 'game_state' in both examples.
+Nevertheless, its name is completely arbitrary.
 
 Arena topology:
     -> x
@@ -56,6 +64,9 @@ INPUT: game_state (tuple with 3 elements):
             >>> current_time = time.time()
 
         Documentation at: https://docs.python.org/2/library/time.html
+
+OUTPUT: target position for current turn. Tuple with 2 floats.
+    eg: (4.53, 13.10)
 """
 
 
