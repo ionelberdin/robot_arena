@@ -1,12 +1,15 @@
-import pygame
-
 """
 To play in the Robot Arena Challenge every
-player can write their own decision strategy.
+player may write their own decision strategy.
 
 It must be written as a function:
     * with arbitrary name
     * that accepts a single input
+    * in a python file with arbitrary name
+    eg: some_python_file.py
+        >>> def the_best_strategy_ever(state):
+        >>>     ...  # here it comes your logic
+        >>>     return (some_x, some_y)  # where you want your robot to go to
 
 This file contains two function examples:
     * human_choice
@@ -16,11 +19,11 @@ Input is called 'game_state' in both examples.
 Nevertheless, its name is completely arbitrary.
 
 Arena topology:
-    -> x
-  |  _________________  top-right
-  v |_|_|_|_|_|_|_|_|_| corner at (18, 0)
-  y |_|_|_|_|_|_|_|_|_| center of corner square at (17, 1)
-    |_|_|_|_|_|_|_|_|_|
+    |-> x
+  _  _________________  top-right
+  | |_|_|_|_|_|_|_|_|_| corner at (18, 0)
+  v |_|_|_|_|_|_|_|_|_| center of corner square at (17, 1)
+  y |_|_|_|_|_|_|_|_|_|
     |_|_|_|_|_|_|_|_|_|
     |_|_|_|_|_|_|_|_|_| center of the arena at (9, 9)
     |_|_|_|_|_|_|_|_|_|
@@ -68,6 +71,8 @@ INPUT: game_state (tuple with 3 elements):
 OUTPUT: target position for current turn. Tuple with 2 floats.
     eg: (4.53, 13.10)
 """
+
+import pygame
 
 
 def human_choice(game_state):
