@@ -34,15 +34,13 @@ arena_name = "symmetric_06"
 arena = Arena.from_name(arena_name)
 screen = pygame.display.set_mode(arena.size)
 
-a = 20 - 15
-b = 9 * 40 - 20 - 15
-
-positions = [(a, a), (b, a), (b, b), (a, b)]
-angles = [np.pi * i for i in range(3)]
-goals = [(b, b), (a, b), (a, a), (b, a)]
+positions = arena.corner_centers
+angles = [np.pi * i for i in range(4)]
+goals = positions[2:] + positions[:2]
 colors = [(255, 0, 0, .6), (0, 255, 0, .6), (0, 0, 255, .6), (255, 0, 255, .6)]
+robot_widths = [robot_width for _ in range(4)]
 strategies = [robot1_logic, robot2_logic, robot3_logic, robot4_logic]
-arg_list = zip(positions, angles, goals, colors, strategies)
+arg_list = zip(positions, angles, goals, colors, robot_widths, strategies)
 
 robots = [Robot(*args) for args in arg_list]
 
