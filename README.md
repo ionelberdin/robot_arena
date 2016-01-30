@@ -48,7 +48,7 @@ Arena axes:
        |_|_|_|_|_|_|_|_|_|
                           
 #### INPUT
-game\_state (tuple with 3 elements):
+game\_state (tuple with 4 elements):
 
 1. game\_state[0] = Information about the arena
   - Arena object. Take a look to the **arena.py** file
@@ -76,6 +76,16 @@ game\_state (tuple with 3 elements):
         >>> current_time = time.time()
 
     Documentation at: https://docs.python.org/2/library/time.html
+
+4. game\_state[3] = turn number
+  - Incremental starting at 1 and adding a unit for every completed turn
+  - To compute which player moves:  
+    >>> game\_state[3] % 4  # if 4 == number_of_players  
+    Giving:  
+    >>> 1  # for player 1
+    >>> 2  # for player 2
+    >>> 3  # for player 3
+    >>> 0  # for player 4
 
 #### OUTPUT
 Target position for current turn.
