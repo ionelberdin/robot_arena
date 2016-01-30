@@ -10,7 +10,7 @@ In addition, some third party libraries are required:
 - PyGame
 - Numpy
 
-# How to implement you own decision strategy
+# How to implement your own decision strategy
 
 To play in the Robot Arena Challenge every
 player may write their own decision strategy.
@@ -19,17 +19,18 @@ It must be written as a function:
 
 - with arbitrary name
 - that accepts a single input
-- in a python file with arbitrary name
-    eg: some_python_file.py
-        >>> def best_strategy_ever(state):
-        >>>     ...  # here it comes your logic
+- in a python file with arbitrary name  
+    eg: some_python_file.py  
+        >>> def best_strategy_ever(state):  
+        >>>     ...  # here it comes your logic  
         >>>     return (some_x, some_y)  # where you want your robot to go to
+- and placed inside **strategies** folder
 
-This file contains two function examples:
-- human\_choice
-- step\_by\_step
+**strategies** folder contains some examples:
+- human\_choice.py
+- step\_by\_step.py
 
-Input is called *game\_state* in both examples.
+Input is called *game\_state* in those examples.
 Nevertheless, its name is completely arbitrary.
 
 Arena topology:
@@ -70,11 +71,10 @@ game\_state (tuple with 3 elements):
      (True, (5, 13), (17, 1))]
 
 3. game\_state[2] = timestamp of player turn ending
-  - 'seconds since Jan 01 1970. (UTC)'
-
-    eg: 1454005673.82 => which corresponds to 2016-28-01 18:27:53.82
-    current timestamp can be obtained using the time library:
-        >>> import time
+  - 'seconds since Jan 01 1970. (UTC)'  
+    eg: 1454005673.82 => which corresponds to 2016-28-01 18:27:53.82  
+    current timestamp can be obtained using the time library:  
+        >>> import time  
         >>> current_time = time.time()
 
     Documentation at: https://docs.python.org/2/library/time.html
