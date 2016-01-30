@@ -41,20 +41,24 @@ Arena topology:
                            corner at (18, 18)
                            center of corner square at (17, 17)
 
-INPUT: game\_state (tuple with 3 elements):
+#### INPUT
+game\_state (tuple with 3 elements):
 
 1. game\_state[0] = Information about the arena
-  - Arena object, take a look to the file arena.py
+  - Arena object. Take a look to the **arena.py** file
     to check its properties and methods.
 
-2. game\_state[1] = Information about players, list of tuples:
+2. game\_state[1] = Information about players
+
+List of tuples:
 
     [(alive_bool_1, current_pos_tuple_1, goal_pos_tuple_1),
      (alive_bool_2, current_pos_tuple_2, goal_pos_tuple_2),
      (alive_bool_3, current_pos_tuple_3, goal_pos_tuple_3),
      (alive_bool_4, current_pos_tuple_4, goal_pos_tuple_4)]
    
-    eg:
+eg:
+
     [(True, (3, 5), (17, 17)),
      (True, (13, 3), (1, 17)),
      (False, (15, 11), (1, 1)),
@@ -70,5 +74,8 @@ INPUT: game\_state (tuple with 3 elements):
 
     Documentation at: https://docs.python.org/2/library/time.html
 
-OUTPUT: target position for current turn. Tuple with 2 floats.
-    eg: (4.53, 13.10)
+#### OUTPUT
+Target position for current turn.
+Tuple with 2 floats.
+    
+    >>> (4.53, 13.10)
