@@ -3,6 +3,13 @@ Game developed as a mock-up for a Systems Engineering project at MASI (UC3M)
 
 # How to run this game on your computer
 
+You need to have in your system:
+- Python 2.7
+
+In addition, some third party libraries are required:
+- PyGame
+- Numpy
+
 # How to implement you own decision strategy
 
 To play in the Robot Arena Challenge every
