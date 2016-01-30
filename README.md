@@ -59,7 +59,7 @@ game\_state (tuple with 3 elements):
 
   - List of tuples:
 
-    [(alive_bool_1, current_pos_tuple_1, goal_pos_tuple_1),
+    [(alive_bool_1, current_pos_tuple_1, goal_pos_tuple_1),  
      (alive_bool_2, current_pos_tuple_2, goal_pos_tuple_2),
      (alive_bool_3, current_pos_tuple_3, goal_pos_tuple_3),
      (alive_bool_4, current_pos_tuple_4, goal_pos_tuple_4)]
