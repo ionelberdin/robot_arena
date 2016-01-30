@@ -16,10 +16,16 @@ class Arena(object):
 
     @property
     def centers(self):
-        L = self.square_width
-        return [((i + .5) * L, (j + .5) * L)
-                for j, line in enumerate(self.squares)
-                for i, item in enumerate(line)]
+        return [self.get_square_centers(x_index, y_index)
+                for y_index, line in enumerate(self.squares)
+                for x_index, item in enumerate(line)]
+
+    @property
+    def corner_centers(self):
+        x_max = len(self.squares[0]) - 1
+        y_max = len(self.squares) - 1
+        indices = [(0, 0), (x_max, 0), (x_max, y_max), (0, y_max)]
+        return [self.get_square_center(ij) for ij in indices]
 
     @property
     def height(self):
@@ -69,6 +75,10 @@ class Arena(object):
             for j, square in enumerate(line):
                 J = j * L
                 pygame.draw.rect(surface, self.colors[square], (J, I, L, L), 0)
+
+    def get_square_center(self, x_index, y_index):
+        L = self.square_width
+        return (x_index + .5) * L, (y_index + .5) * L
 
     def is_point_over_arena(self, (x, y)):
         if (0 < x < self.width) and (0 < y < self.height):
