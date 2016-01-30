@@ -33,22 +33,20 @@ It must be written as a function:
 Input is called *game\_state* in those examples.
 Nevertheless, its name is completely arbitrary.
 
-Arena topology:
+Arena axes:
 
        |-> x
-     _  _________________  top-right
-     | |_|_|_|_|_|_|_|_|_| corner at (18, 0)
-     v |_|_|_|_|_|_|_|_|_| center of corner square at (17, 1)
+     _  _________________ 
+     | |_|_|_|_|_|_|_|_|_|
+     v |_|_|_|_|_|_|_|_|_|
      y |_|_|_|_|_|_|_|_|_|
        |_|_|_|_|_|_|_|_|_|
-       |_|_|_|_|_|_|_|_|_| center of the arena at (9, 9)
        |_|_|_|_|_|_|_|_|_|
        |_|_|_|_|_|_|_|_|_|
        |_|_|_|_|_|_|_|_|_|
-       |_|_|_|_|_|_|_|_|_| bottom-right
-                           corner at (18, 18)
-                           center of corner square at (17, 17)
-
+       |_|_|_|_|_|_|_|_|_|
+       |_|_|_|_|_|_|_|_|_|
+                          
 #### INPUT
 game\_state (tuple with 3 elements):
 
