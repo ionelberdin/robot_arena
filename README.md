@@ -1,6 +1,9 @@
 # robot\_arena
 Game developed as a mock-up for a Systems Engineering project at MASI (UC3M)
 
+# Does it work yet?
+Nop, it is currently in development.
+
 # How to run this game on your computer
 
 You need to have in your system:
