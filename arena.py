@@ -2,6 +2,7 @@ import pygame
 
 
 def manchester_distance((x1, y1), (x2, y2)):
+    """Sum of absolute distances in both axes, namely: X & Y"""
     return abs(x1 - x2) + abs(y1 - y2)
 
 
@@ -42,7 +43,14 @@ class Arena(object):
 
     @classmethod
     def from_name(cls, arena_name, square_width=40):
-        with open("battlefields/{0}.txt".format(arena_name), "r") as txt:
+        """
+        Load an existent arena from ./arenas/ folder.
+        Inputs:
+            * name of the file without the extension
+            * square_width in pixels (optional)
+        """
+
+        with open("arenas/{0}.txt".format(arena_name), "r") as txt:
             squares = []
             for line in txt.readlines():
                 squares.append(line.strip().split(" "))
