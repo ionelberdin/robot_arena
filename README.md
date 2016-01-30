@@ -44,21 +44,25 @@ Arena topology:
 INPUT: game\_state (tuple with 3 elements):
 
 1. game\_state[0] = Information about the arena
-   Arena object, take a look to the file arena.py
-   to check its properties and methods.
+  - Arena object, take a look to the file arena.py
+    to check its properties and methods.
 
 2. game\_state[1] = Information about players, list of tuples:
+
     [(alive_bool_1, current_pos_tuple_1, goal_pos_tuple_1),
      (alive_bool_2, current_pos_tuple_2, goal_pos_tuple_2),
      (alive_bool_3, current_pos_tuple_3, goal_pos_tuple_3),
      (alive_bool_4, current_pos_tuple_4, goal_pos_tuple_4)]
-   eg: [(True, (3, 5), (17, 17)),
-        (True, (13, 3), (1, 17)),
-        (False, (15, 11), (1, 1)),
-        (True, (5, 13), (17, 1))]
+   
+    eg:
+    [(True, (3, 5), (17, 17)),
+     (True, (13, 3), (1, 17)),
+     (False, (15, 11), (1, 1)),
+     (True, (5, 13), (17, 1))]
 
 3. game\_state[2] = timestamp of player turn ending
-    'seconds since Jan 01 1970. (UTC)'
+  - 'seconds since Jan 01 1970. (UTC)'
+
     eg: 1454005673.82 => which corresponds to 2016-28-01 18:27:53.82
     current timestamp can be obtained using the time library:
         >>> import time
