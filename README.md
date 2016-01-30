@@ -71,7 +71,7 @@ game\_state (tuple with 3 elements):
 3. game\_state[2] = timestamp of player turn ending
   - 'seconds since Jan 01 1970. (UTC)'  
     eg: 1454005673.82 => which corresponds to 2016-28-01 18:27:53.82  
-    current timestamp can be obtained using the time library:  
+    Current timestamp can be obtained using the time library:  
         >>> import time  
         >>> current_time = time.time()
 
