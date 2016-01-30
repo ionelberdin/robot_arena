@@ -69,7 +69,7 @@ game\_state (tuple with 4 elements):
      (True, (5, 13), (17, 1))]
 
 3. game\_state[2] = timestamp of player turn ending
-  - 'seconds since Jan 01 1970. (UTC)'  
+  - seconds since Jan 01 1970. (UTC)  
     eg: 1454005673.82 => which corresponds to 2016-28-01 18:27:53.82  
     Current timestamp can be obtained using the time library:  
         >>> import time  
@@ -78,14 +78,14 @@ game\_state (tuple with 4 elements):
     Documentation at: https://docs.python.org/2/library/time.html
 
 4. game\_state[3] = turn number
-  - Incremental starting at 1 and adding a unit for every completed turn
+  - Incremental value starting at 0 and adding 1 for every completed turn
   - To compute which player moves:  
     >>> game\_state[3] % 4  # if 4 == number_of_players  
     Giving:  
-    >>> 1  # for player 1
-    >>> 2  # for player 2
-    >>> 3  # for player 3
-    >>> 0  # for player 4
+    >>> 0  # for player 1  
+    >>> 1  # for player 2  
+    >>> 2  # for player 3  
+    >>> 3  # for player 4  
 
 #### OUTPUT
 Target position for current turn.
