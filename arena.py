@@ -25,7 +25,7 @@ class Arena(object):
         x_max = len(self.squares[0]) - 1
         y_max = len(self.squares) - 1
         indices = [(0, 0), (x_max, 0), (x_max, y_max), (0, y_max)]
-        return [self.get_square_center(ij) for ij in indices]
+        return [self.get_square_center(i, j) for i, j in indices]
 
     @property
     def height(self):
@@ -70,11 +70,18 @@ class Arena(object):
 
     def draw(self, surface):
         L = self.square_width
-        for i, line in enumerate(self.squares):
-            I = i * L
-            for j, square in enumerate(line):
-                J = j * L
-                pygame.draw.rect(surface, self.colors[square], (J, I, L, L), 0)
+        pygame.draw.rect(surface, self.colors["#"],
+                         (0, 0, self.width, self.height), 0)
+        for j, line in enumerate(self.squares):
+            y = j * L
+            for i, square in enumerate(line):
+                x = i * L
+                if square == "#":
+                    pygame.draw.rect(surface, self.colors[square],
+                                     (x, y, L, L), 0)
+                elif square == "x":
+                    pygame.draw.circle(surface, self.colors[square],
+                                       (x+L/2, y+L/2), L/2, 0)
 
     def get_square_center(self, x_index, y_index):
         L = self.square_width
