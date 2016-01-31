@@ -65,5 +65,6 @@ while 1:
     arena.draw(screen)
     for robot in robots:
         robot.update()
-        screen.blit(robot.image, robot.pos)
+        robot.draw(screen)
+        # screen.blit(robot.image, robot.position)
     pygame.display.update()
