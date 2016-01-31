@@ -44,4 +44,10 @@ class Robot(pygame.sprite.Sprite):
 
     @property
     def state(self):
-        return self.alive, self.position, self.goal
+        public_properties = {
+            'alive': self.alive,
+            'position': self.position,
+            'goal': self.goal,
+            'width': self.width
+        }
+        return public_properties
