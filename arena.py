@@ -70,18 +70,17 @@ class Arena(object):
 
     def draw(self, surface):
         L = self.square_width
-        pygame.draw.rect(surface, self.colors["#"],
+        pygame.draw.rect(surface, (50, 50, 50),
                          (0, 0, self.width, self.height), 0)
         for j, line in enumerate(self.squares):
             y = j * L
             for i, square in enumerate(line):
                 x = i * L
-                if square == "#":
-                    pygame.draw.rect(surface, self.colors[square],
-                                     (x, y, L, L), 0)
-                elif square == "x":
+                pygame.draw.rect(surface, self.colors['#'],
+                                 (x+1, y+1, L-2, L-2), 0)
+                if square == 'x':
                     pygame.draw.circle(surface, self.colors[square],
-                                       (x+L/2, y+L/2), L/2, 0)
+                                       (x+L/2, y+L/2), L/2-1, 0)
 
     def get_square_center(self, x_index, y_index):
         L = self.square_width
