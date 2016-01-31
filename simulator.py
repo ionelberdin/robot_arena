@@ -1,6 +1,12 @@
 import numpy as np
 
 
+def get_collision_with_circles(position, target, radius, circles):
+    """
+    """
+    pass
+
+
 def get_critical_pit(position, target, robot_width, pits_and_widths):
     """
     Input:
