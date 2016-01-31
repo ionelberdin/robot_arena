@@ -1,13 +1,14 @@
 import numpy as np
 
 
-def get_critial_pit(position, target, robot_width, pits_and_widths):
+def get_critical_pit(position, target, robot_width, pits_and_widths):
     """
     Input:
         position: starting point
         target: final point
         robot_width: diameter of the robot
         pits_and_widths: list of tuples that contain (pit_position, pit_width)
+
     Output:
         Tuple with information about critical pit or None.
         (pit_position,
@@ -54,6 +55,7 @@ def simulate_move(game_state, target):
     """
 
     # check for pits in the way
+    critical_pit = get_critical_pit()
 
     # check for adversaries in the way
 
