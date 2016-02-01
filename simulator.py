@@ -50,8 +50,8 @@ def get_critical_pit(position, target, robot_width, pits_and_widths):
     if len(dangerous_pits) == 0:
         return None
 
-    dangerous_pits.sort(key=lambda item: item[2])
-    return dangerous_pits[0]
+    critical_pit_tuple = dangerous_pits.sort(key=lambda item: item[2])[0]
+    return critical_pit_tuple
 
 
 def simulate_move(game_state, target):
