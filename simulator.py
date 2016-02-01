@@ -60,6 +60,11 @@ def simulate_move(game_state, target):
     returns the possible outcome as a potential game_state
     """
 
+    # create caravan (robots identified by their turn number: 0, 1, 2 & 3)
+    caravan = [game_state["turn"] % 4]
+    pushed = [[], ]
+    pusher = [None]
+
     # check for pits in the way
     critical_pit = get_critical_pit()
 
