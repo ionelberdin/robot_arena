@@ -4,7 +4,30 @@ import numpy as np
 def get_collision_with_circles(position, target, radius, circles):
     """
     """
-    pass
+    A = np.array(position)
+    B = np.array(target)
+    AB = B - A
+    ABn = np.linalg.norm(AB)
+    collisions = []
+
+    for C, r in circles:
+        C = np.array(C)
+        AC = C - A
+        ACn = np.linalg.norm(AC)
+        projection = AC.dot(AB) / ABn
+        dist = np.sqrt(ACn**2 - projection**2)
+        radii_sum = r + radius
+        is_between_AB = (projection * AB.dot(B - C) > 0)
+        is_close_to_B = np.linalg.norm(C - B) < radii_sum
+
+        if radii_sum < dist and (is_between_AB or is_close_to_B):
+            # save collision location
+            correction = np.sqrt(radii_sum**2 - dist**2)
+            distance_b4_collision = projection - correction
+            position_b4_collision = A + AB / ABn * distance_b4_collision
+            collisions.append((position_b4_collision, (C, r)))
+
+    return collisions
 
 
 def get_critical_pit(position, target, robot_width, pits_and_widths):
@@ -60,13 +83,27 @@ def simulate_move(game_state, target):
     returns the possible outcome as a potential game_state
     """
 
+    # don't die when the movement finishes
+    die = False
+
     # create caravan (robots identified by their turn number: 0, 1, 2 & 3)
     caravan = [game_state["turn"] % 4]
     pushed = [[], ]
     pusher = [None]
 
-    # check for pits in the way
+    # check for pits in pusher way
     critical_pit = get_critical_pit()
+
+    if critical_pit is not None:
+        # update target
+        die = True
+        target = critical_pit[3]
+
+    check_again = True
+    while check_again:
+        check_again = False
+        for robot_id in caravan:
+            pass
 
     # check for adversaries in the way
 

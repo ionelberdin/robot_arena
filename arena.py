@@ -7,8 +7,8 @@ def manchester_distance((x1, y1), (x2, y2)):
 
 
 class Arena(object):
-    colors = {'#': (255, 255, 255), 'x': (0, 0, 0)}
-    values = {'#': 1, 'x': 0}
+    colors = {'#': (255, 255, 255), 'x': (0, 0, 0), 'w': (100, 100, 255)}
+    values = {'#': 1, 'x': 0, 'w': 1}
 
     def __init__(self, squares, square_width=40):
         self.squares = squares
@@ -79,8 +79,13 @@ class Arena(object):
                 pygame.draw.rect(surface, self.colors['#'],
                                  (x+1, y+1, L-2, L-2), 0)
                 if square == 'x':
-                    pygame.draw.circle(surface, self.colors[square],
-                                       (x+L/2, y+L/2), L/2-1, 0)
+                    pygame.draw.rect(surface, self.colors[square],
+                                     (x+1, y+1, L-2, L-2), 0)
+                    # pygame.draw.circle(surface, self.colors[square],
+                                       # (x+L/2, y+L/2), L/2-1, 0)
+                elif square == 'w':
+                    pygame.draw.rect(surface, self.colors[square],
+                                     (x+1, y+1, L-2, L-2), 0)
 
     def get_square_center(self, x_index, y_index):
         L = self.square_width
